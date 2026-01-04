@@ -208,7 +208,7 @@
       ],
       zh: cventry(
         tl: [*监管报表自动化项目*，上汽集团财务有限公司],
-        tr: "职位：负责人"
+        tr: "负责人"
       )[
       - 覆盖人行利率日报、金数、EAST、1104、新资本基金穿透等核心监管报表。
       - 完成监管口径梳理、数据源治理、需求文档与方案设计，推动系统自动生成与校验。
@@ -225,7 +225,7 @@
       )[],
       zh: cventry(
         tl: [*IFRS9 会计准则切换项目*，赢时胜股份有限公司],
-        tr: "",
+        tr: "负责人",
       )[
       - 负责社保产品 IFRS9 准则切换需求分析与系统方案设计。
       - 覆盖 SPPI 数据处理、核算模板调整及并行验证，保障准则切换平稳上线。
@@ -240,9 +240,12 @@
         tr: githublink("ice1000/arend-io"),
       )[],
       zh: cventry(
-        tl: [*Arend IO*，实验性 Arend IO 库，实现了 unsafePerformIO 和简单的 IO 操作。],
-        tr: githublink("ice1000/arend-io"),
-      )[],
+        tl: [*浙商汇金信托一体化项目*，恒生电子股份有限公司],
+        tr: "估值系统实施负责人",
+      )[
+      - 负责恒生 PB / TCMP / TA / 资管系统 的系统集成、数据迁移与联测。
+      - 完成约 150 个存量产品 的数据迁移及二级市场业务联调。
+      ],
     )
   }
 
@@ -256,8 +259,8 @@
       - Provides live preview -- test grammar files by dynamically highlighting user code according to the grammar on the fly. These highlighted code could be exported to HTML.
       ],
       zh: cventry(
-        tl: [*固收投资交易系统改造项目*，上汽集团财务有限公司（职位：负责人）],
-        tr: "职位：负责人"
+        tl: [*固收投资交易系统改造项目*，上汽集团财务有限公司],
+        tr: "负责人"
       )[
       - 主导固收投前–投中–投后全流程线上化，落地赢时胜交易、风控、估值、报表模块。
       - 实现交易数据与行情数据自动获取，替代 SAP 手工录入与制表。
@@ -492,6 +495,7 @@
   intellijPest
   noSimple[
     #arendVSCode
+    #arendIO
   ]
 
   edu
