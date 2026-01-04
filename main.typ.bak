@@ -37,8 +37,8 @@
       ([Math 437], [Algebraic Geometry], [代数几何]),
     )
     translate(en: [== Education], zh: [== 教育经历])
-    let gpa = 3.85
-    let psu-date = [#translate-date(9, 2010) -- #translate-date(6, 2014)]
+    let gpa = 3.28
+    let psu-date = [#translate-date(8, 2018) -- #translate-date(12, 2022)]
     translate(
       en: cventry(
         tl: [B.S. in Computer Science at *The Pennsylvania State University*, PA, US],
@@ -47,12 +47,55 @@
         selected courses: #psu-courses.map(item => item.at(0)).join(", ")])[\
         Selected courses: #psu-courses.map(item => item.at(0) + " " + item.at(1)).join(", ")]],
       zh: cventry(
-        tl: [重庆大学，电子信息工程，本科],
+        tl: [宾夕法尼亚州州立大学，计算机科学专业，本科，美国],
         tr: psu-date,
-      )[GPA #gpa/4.00],
+      )[副专业：数学, GPA #gpa/4.00\
+        部分选修课程：#psu-courses.map(item => item.at(0) + " " + item.at(2)).join(", ")],
+    )
+
+    let cmu-courses = (
+      ([15-836], [Substructural Logics], [亚结构逻辑]),
+      ([15-791], [Advanced Topics in Foundations of Types and Programming Languages], [类型和编程语言基础中的高级课题])
+    )
+    let cmu-date = [#translate-date(8, 2023) -- #current]
+    translate(
+      en: cventry(
+        tl: [Ph.D. in Computer Science at *Carnegie Mellon University*, PA, US],
+        tr: cmu-date,
+      )[Advisor: Stephanie Balzer#noSimple(simple: [,
+        selected courses: #cmu-courses.map(item => item.at(0)).join(", ")])[\
+        Selected courses: #cmu-courses.map(item => item.at(0) + " " + item.at(1)).join(", ")]],
+      zh: cventry(
+        tl: [卡内基梅隆大学，计算机科学专业，博士，美国],
+        tr: cmu-date,
+      )[导师：Stephanie Balzer\
+        部分选修课程：#cmu-courses.map(item => item.at(0) + " " + item.at(2)).join(", ")],
     )
   }
 
+  let sbrella = {
+    let sbrella-date = [#translate-date(2, 2018) -- #translate-date(7, 2018)]
+    translate(
+      en: cventry(
+        tl: [*Sourcebrella Inc.*, Shenzhen, China],
+        tr: sbrella-date,
+        bl: [_Static Analysis_, Compiler Frontend, IDE Plugin Development],
+      )[#noSimple[
+      - Created IntelliJ/CLion/Eclipse plugin for the Pinpoint analyzer. Co-worked on the SonarQube plugin.
+      - Created a multi-threading cross Java/Kotlin source code indexer which can index Hadoop within 4 minutes.
+      - Learned a lot about Linux programming and the Clang/LLVM codebase.
+      ]],
+      zh: cventry(
+        tl: [*深圳市前海源伞科技有限公司*，深圳，中国],
+        tr: sbrella-date,
+        bl: [静态分析，编译器前端，IDE 插件开发实习],
+      )[#noSimple[
+      - 负责 pinpoint 分析器的 IntelliJ/CLion/Eclipse 工具集成，协助开发 SonarQube 插件。
+      - 编写了一个多线程的跨 Java/Kotlin 的源代码索引工具，索引 Hadoop 源码仅需 4 分钟。
+      - 学到了很多 Linux 编程和 Clang/LLVM 源码相关的知识。
+      ]],
+    )
+  }
 
   let pingcap = {
     let grpcio = link("https://docs.rs/crate/grpcio", "grpcio")
@@ -82,7 +125,7 @@
   }
 
   let jetbrains = {
-    let jetbrains-date = [#translate-date(7, 2022) -- #translate-date(7, 2025)]
+    let jetbrains-date = [#translate-date(1, 2020) -- #translate-date(12, 2020)]
     translate(
       en: cventry(
         tl: [*JetBrains Research*, Remote],
@@ -98,21 +141,20 @@
         - Designed and implemented an expression type-checking debugger that supports step-into and displays local context and expressions as stack frames.
       ]],
       zh: cventry(
-        tl: [*上汽集团财务有限公司*，上海],
+        tl: [*捷并思研究院*，远程],
         tr: jetbrains-date,
-        bl: [运营 / 系统负责人],
+        bl: [同伦类型论与依值类型，交互式定理证明器 Arend 开发实习],
       )[
-      - 负责自营及投顾账户运营：投前配置、投中交易、投后持仓与估值核对，覆盖 SAP / 赢时胜系统。
-      - 牵头投融资板块监管报送：人行金数、利率日报、EAST、1104、新资本等，保障报送质量与合规。
-      - 主导监管报表自动化项目：完成数据源梳理、接口落地、报表自动生成，显著降低人工成本。
-      - 推动固收交易系统改造：实现交易、风控、估值、报表全流程线上化。
-      - 协调外汇交易中心、券商、资讯商等多方接口，提升数据治理与业务效率。
+      - 使用 gradle composite build 和 buildSrc 等复杂的构建功能改善编译速度、提高构建自动化程度。
+      - 实现了一些语言特性和 IDE 插件功能，如 section 语法、卫生宏、优化的 `Fin` 类型、语义高亮等。
+      - 开发了一个可扩展的 REPL 引擎，并提供命令行实现（可通过上下文补全，使用 `jline3` 框架）、IntelliJ IDEA 实现（可与打开的项目进行交互，支持补全、高亮和跳转）。
+      - 设计并实现了一个表达式类型检查的调试器，支持显示局部变量和表达式栈帧，同时支持单步调试。
       ],
     )
   }
 
   let plct = {
-    let aya-date = [#translate-date(1, 2022) -- #translate-date(6, 2022)]
+    let aya-date = [#translate-date(12, 2020) -- #current]
     let ntypeCafe = "https://infinity-type-cafe.github.io/ntype-cafe-summer-school"
     translate(
       en: cventry(
@@ -126,18 +168,18 @@
       - Organized reading activities on design and implementation of type theory, presented several talks in #link(ntypeCafe)[∞-Type Café Summer School on Type Theory] (in Chinese).
       ]],
       zh: cventry(
-        tl: [*兴业证券股份有限公司*，上海],
+        tl: [*PLCT 实验室*，远程],
         tr: aya-date,
-        bl: [运维工程师],
+        bl: [依值类型系统实现，开源维护者],
       )[
-      - 负责估值系统、TA/直销 TA 系统运维与部署。
-      - 参与两地三中心机房搬迁，完成方案、测试与实施协同。
+      - 带领类型小队探索现代化的依值类型实现策略，包括但不限于用到模式合一化、依值模式匹配的检查、Cartesian 立方类型论、递归函数停机性检查、类型论不同层面之间的阶段分离等。
+      - 组织一些关于类型论设计和实现的读书活动以及知识分享，作为讲师参与 #link(ntypeCafe)[∞-Type Café 类型论暑校]。
       ],
     )
   }
 
   let risingwave = {
-    let risingwave-date = [#translate-date(4, 2020) -- #translate-date(12, 2022)]
+    let risingwave-date = [#translate-date(7, 2022) -- #translate-date(7, 2023)]
     translate(
       en: cventry(
         tl: [*RisingWave Labs*, Remote],
@@ -148,38 +190,31 @@
       - Implemented a pretty printing framework for trees with smart line fitting and Unicode art. Integrated into SQL explain.
       ],
       zh: cventry(
-        tl: [*赢时胜股份有限公司*，上海],
+        tl: [*北京奇点无限数据科技有限公司*，远程],
         tr: risingwave-date,
-        bl: [需求工程师],
+        bl: [数据库开发，实习],
       )[
-      - 负责银行托管清算与估值系统需求分析、方案设计与落地。
-      - 主导 IFRS9 会计准则切换项目（社保产品），保障准时平稳上线。
-      - 维护托管行每日对账、清算、估值核算流程
+      - 提案重构查询计划语法树的设计以更好地使用 Rust 编程语言的枚举功能。
+      - 实现将树状数据使用 Unicode 艺术可视化的算法，会计算行宽并支持智能断行，集成到 SQL explain 中。
       ],
     )
   }
 
-  let sbrella = {
-    let sbrella-date = [#translate-date(8, 2014) -- #translate-date(3, 2020)]
+  let mcREU = {
+    let reu-date = [#translate-date(5, 2019) -- #translate-date(8, 2019)]
+    let ghLink = githublink("owo-lang/voile-rs")
     translate(
       en: cventry(
-        tl: [*Sourcebrella Inc.*, Shenzhen, China],
-        tr: sbrella-date,
-        bl: [_Static Analysis_, Compiler Frontend, IDE Plugin Development],
-      )[#noSimple[
-      - Created IntelliJ/CLion/Eclipse plugin for the Pinpoint analyzer. Co-worked on the SonarQube plugin.
-      - Created a multi-threading cross Java/Kotlin source code indexer which can index Hadoop within 4 minutes.
-      - Learned a lot about Linux programming and the Clang/LLVM codebase.
-      ]],
+        tl: [*Multi-Campus REU*, State College],
+        tr: reu-date,
+      )[
+      - Extensively studied the literature on row polymorphism and record calculus.
+      - Implemented (#ghLink) and formalized a row polymorphic dependent type theory.
+      ],
       zh: cventry(
-        tl: [*恒生电子股份有限公司*， 上海],
-        tr: sbrella-date,
-        bl: [估值实施],
-      )[#noSimple[
-      - 负责估值系统部署、数据迁移、交易/行情/TA 对接与核算支持。
-      - 服务证券、信托、资管客户：齐鲁资管、浙商证券、中航信托等。
-      - 参与多家机构公募资质厂检，并承担客户培训与售前支持。
-      ]],
+        tl: [*跨校区本科科研活动*，州学院],
+        tr: reu-date,
+      )[- 广泛地调研关于行多态和结构体演算的研究，设计、实现（#ghLink）并形式化了一个相关的依值类型系统。],
     )
   }
 
@@ -207,12 +242,11 @@
       - Can export elaboration result to HTML or #latex. Can JIT-compile closures into JVM using HOAS, Can refine patterns using coverage information. Supports both LSP in VSCode and IntelliJ PSI. Provide jlink binary releases.
       ],
       zh: cventry(
-        tl: [*监管报表自动化项目*，上汽集团财务有限公司],
-        tr: "职位：负责人"
+        tl: [*Aya Prover*，实用的依值类型系统实现（职位：项目组长）],
+        tr: githublink("aya-prover/aya-dev"),
       )[
-      - 覆盖人行利率日报、金数、EAST、1104、新资本基金穿透等核心监管报表。
-      - 完成监管口径梳理、数据源治理、需求文档与方案设计，推动系统自动生成与校验。
-      - 对接外汇交易中心、券商、资讯商接口（CSTP、RDI、行情数据），显著降低人工填报与差错率。
+      - 支持依值类型、依值模式匹配及重叠情况一致性检查、高阶归纳类型、泛化代数数据类型（已发表文章）、分层宇宙、立方类型论特性和隐式参数的推导。
+      - 能导出繁饰结果到网页或 #latex。能将解释执行时的闭包 JIT 编译到 Java 字节码（使用 HOAS 接入原本的语法树）。能根据模式匹配覆盖情况智能对模式细化。同时支持 VSCode 的语言服务器协议和 IntelliJ 的代码分析框架。提供 jlink 二进制分发。
       ],
     )
   }
@@ -224,12 +258,9 @@
         tr: githublink("ice1000/vscode-arend"),
       )[],
       zh: cventry(
-        tl: [*IFRS9 会计准则切换项目*，赢时胜股份有限公司],
-        tr: "",
-      )[
-      - 负责社保产品 IFRS9 准则切换需求分析与系统方案设计。
-      - 覆盖 SPPI 数据处理、核算模板调整及并行验证，保障准则切换平稳上线。
-      ],
+        tl: [*VSCode extension for Arend*，Arend 语言服务实现，基于 lsp4j 框架和 Arend 编译器内部接口。],
+        tr: githublink("ice1000/vscode-arend"),
+      )[],
     )
   }
 
@@ -256,49 +287,13 @@
       - Provides live preview -- test grammar files by dynamically highlighting user code according to the grammar on the fly. These highlighted code could be exported to HTML.
       ],
       zh: cventry(
-        tl: [*固收投资交易系统改造项目*，上汽集团财务有限公司（职位：负责人）],
-        tr: "职位：负责人"
+        tl: [*IntelliJ Pest*，给 IntelliJ Platform 开发的 Pest 文法语言插件],
+        tr: githublink("pest-parser/intellij-pest"),
       )[
-      - 主导固收投前–投中–投后全流程线上化，落地赢时胜交易、风控、估值、报表模块。
-      - 实现交易数据与行情数据自动获取，替代 SAP 手工录入与制表。
-      - 支持风控额度校验、持仓监控及监管报表自动生成。
+      - 支持含语义信息的高亮、错误检查、定义跳转、变量补全、提取定义、内联定义以及与 Rust 插件集成。
+      - 提供实时高亮功能——可根据语法定义为用户代码动态提供高亮以测试语法定义文件，并支持导出 HTML。
       ],
     )
-  }
-
-  let summary = {
-    let progLang = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- *10+ 年金融系统 / 资管业务经验*，覆盖证券、基金、信托、银行及财务公司。]
-      )
-    }
-
-    let compiler = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- *监管报送 & 数据治理*专家：熟悉人行金数、利率日报、EAST、1104、新资本基金穿透等 50+ 报表。]
-      )
-    }
-
-    let kotlinJava = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 核心系统与项目管理能力突出：*估值、交易、TA、监管报表系统*从 *0–1* 建设与改造。]
-      )
-    }
-
-    let typeTheory = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 兼具*业务 + IT/系统*能力，可高效连接*业务、风控、财务与技术*团队。]
-      )
-    }
-
-    progLang
-    compiler
-    kotlinJava
-    typeTheory
   }
 
   let skills = {
@@ -363,26 +358,6 @@
     ideDev
     noSimple[#mobileDev]
     devTools
-  }
-
-    let myskills = {
-    let compiler = translate(en: [
-      - Compiler: understand techniques like locally nameless, explicit substitution, ANF, (P)HOAS (in LF & logic programming), and NbE.
-        #noSimple[Familiar with most parser generators, understand layout syntax parsing.]
-    ], zh: [
-      - 监管与报表：人行金数、利率日报、EAST、1104、新资本基金穿透。
-    ])
-    let progLang = {
-      let very = "Java Kotlin Rust C# Agda Haskell Arend"
-      let somehow = "Dart C C++ F# F★ Idris Perl MATLAB"
-      translate(en: [
-        - Programming Languages: multilingual (not limited to any specific language), especially experienced in #very, comfortable with #somehow (in random order).
-      ], zh: [
-        - 系统：赢时胜交易/估值/报表、恒生估值/TA、SAP。
-      ])
-    }
-    progLang
-    compiler
   }
 
   let misc = {
@@ -452,73 +427,49 @@
     )
   }
 
-  let certificate = {
-    translate(
-      en: [- Languages: English - fluent (TOEFL 100), Chinese - native speaker],
-      zh: [- 基金从业资格证]
-    )
-
-    translate(
-      en: [- Languages: English - fluent (TOEFL 100), Chinese - native speaker],
-      zh: [- 证券从业资格证]
-    )
-
-    translate(
-      en: [- Languages: English - fluent (TOEFL 100), Chinese - native speaker],
-      zh: [- CFA 一级]
-    )
-  
-  }
-
   // Start of the document
 
-  translate(en: [= #smallcaps[Tesla Zhang]], zh: [= #smallcaps[张梦惠]])
+  translate(en: [= #smallcaps[Tesla Zhang]], zh: [= #smallcaps[Tesla Zhang] (千里冰封)])
 
-  [#link("mailto:zhangmh789@foxmail.com")[zhangmh789\@foxmail.com] $dot.c$ #iconlink("156‑1832‑9897")]
+  [#link("mailto:ice1000kotlin@gmail.com")[ice1000kotlin\@gmail.com] $dot.c$ #iconlink("https://ice1000.org") $dot.c$ #iconlink("https://github.com/ice1000", icon: "github")]
 
-  
-  translate(en: [== Personal Summary], zh: [== 个人概要])
-  summary
-
+  edu
 
   translate(en: [== Work Experience], zh: [== 工作经历])
   jetbrains
   plct
   risingwave
   sbrella
+  pingcap
 
   translate(en: [== Related Projects], zh: [== 项目经历])
   aya
   intellijPest
   noSimple[
     #arendVSCode
+    #arendIO
   ]
 
-  edu
-
-  //noSimple[
-  //  #translate(en: [== Academic Experience], zh: [== 学术经历])
-  //  #mcREU
-  //  #la461
-  //]
+  noSimple[
+    #translate(en: [== Academic Experience], zh: [== 学术经历])
+    #mcREU
+    #la461
+  ]
 
   translate(en: [== Skills], zh: [== 技能])
-  myskills
+  skills
 
-  //translate(en: [== Misc], zh: [== 其它])
-  //misc
-
-  translate(en: [== Certificate], zh: [== 证书])
-  certificate
+  translate(en: [== Misc], zh: [== 其它])
+  misc
 
   // https://github.com/typst/typst/issues/1462
-  //{
-  //  set text(size: 0pt)
-  //  [@SIT]
-  //  noSimple[@ExactlyApplied, @Guest, @ExtTyApp, @FordHelix]
-  //}
-  //translate(en: [== Publications & Preprints], zh: [== 论文发表 & 预印本])
-  //bibliography("pub.bib", title: none)
+  {
+    set text(size: 0pt)
+    [@SIT]
+    noSimple[@ExactlyApplied, @Guest, @ExtTyApp, @FordHelix]
+  }
+  translate(en: [== Publications & Preprints], zh: [== 论文发表 & 预印本])
+  bibliography("pub.bib", title: none)
 }
 
 If you are seeing this in your compilation output,
