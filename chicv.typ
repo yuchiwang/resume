@@ -59,11 +59,18 @@
     weight: "light",
   )
 
+  // let the-font = (
+  //  "Palatino Linotype",
+  //  "Source Han Serif SC",
+  //  "Source Han Serif",
+  // )
+
   let the-font = (
-    "Palatino Linotype",
-    "Source Han Serif SC",
-    "Source Han Serif",
+    "TeX Gyre Pagella",
+    "Noto Serif CJK SC",
   )
+
+
   show heading.where(
     level: 2
   ): it => text(
