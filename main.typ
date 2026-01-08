@@ -123,7 +123,7 @@
   }
 
   let jetbrains = {
-    let jetbrains-date = [#translate-date(1, 2020) -- #translate-date(12, 2020)]
+    let jetbrains-date = [#translate-date(8, 2024) -- #translate-date(11, 2025)]
     translate(
       en: cventry(
         tl: [*JetBrains Research*, Remote],
@@ -139,20 +139,20 @@
         - Designed and implemented an expression type-checking debugger that supports step-into and displays local context and expressions as stack frames.
       ]],
       zh: cventry(
-        tl: [*捷并思研究院*，远程],
+        tl: [*沐曦集成电路*，PDE, 上海],
         tr: jetbrains-date,
-        bl: [同伦类型论与依值类型，交互式定理证明器 Arend 开发实习],
+        bl: [大模型推理，软件专家],
       )[
-      - 使用 gradle composite build 和 buildSrc 等复杂的构建功能改善编译速度、提高构建自动化程度。
-      - 实现了一些语言特性和 IDE 插件功能，如 section 语法、卫生宏、优化的 `Fin` 类型、语义高亮等。
-      - 开发了一个可扩展的 REPL 引擎，并提供命令行实现（可通过上下文补全，使用 `jline3` 框架）、IntelliJ IDEA 实现（可与打开的项目进行交互，支持补全、高亮和跳转）。
-      - 设计并实现了一个表达式类型检查的调试器，支持显示局部变量和表达式栈帧，同时支持单步调试。
+      - vLLM各版本适配。
+      - sglang分布式推理系统架构设计和优化，从调度、访存、通信等各个层面分析和优化推理性能。
+      - lmdeploy适配和性能优化。
+      - 量化。
       ],
     )
   }
 
   let plct = {
-    let aya-date = [#translate-date(12, 2020) -- #current]
+    let aya-date = [#translate-date(9, 2022) -- #translate-date(5, 2024)]
     let ntypeCafe = "https://infinity-type-cafe.github.io/ntype-cafe-summer-school"
     translate(
       en: cventry(
@@ -166,18 +166,18 @@
       - Organized reading activities on design and implementation of type theory, presented several talks in #link(ntypeCafe)[∞-Type Café Summer School on Type Theory] (in Chinese).
       ]],
       zh: cventry(
-        tl: [*PLCT 实验室*，远程],
+        tl: [*理想汽车*，算力单元，上海],
         tr: aya-date,
-        bl: [依值类型系统实现，开源维护者],
+        bl: [AI编译器， 高级开发工程师],
       )[
-      - 带领类型小队探索现代化的依值类型实现策略，包括但不限于用到模式合一化、依值模式匹配的检查、Cartesian 立方类型论、递归函数停机性检查、类型论不同层面之间的阶段分离等。
-      - 组织一些关于类型论设计和实现的读书活动以及知识分享，作为讲师参与 #link(ntypeCafe)[∞-Type Café 类型论暑校]。
+      - AI编译器前端表示与图优化。
+      - 算子精度验证框架开发。
       ],
     )
   }
 
   let risingwave = {
-    let risingwave-date = [#translate-date(7, 2022) -- #translate-date(7, 2023)]
+    let risingwave-date = [#translate-date(7, 2021) -- #translate-date(8, 2022)]
     translate(
       en: cventry(
         tl: [*RisingWave Labs*, Remote],
@@ -188,18 +188,17 @@
       - Implemented a pretty printing framework for trees with smart line fitting and Unicode art. Integrated into SQL explain.
       ],
       zh: cventry(
-        tl: [*北京奇点无限数据科技有限公司*，远程],
+        tl: [*百度*，IDG，上海],
         tr: risingwave-date,
-        bl: [数据库开发，实习],
+        bl: [模型部署，高级研发工程师],
       )[
-      - 提案重构查询计划语法树的设计以更好地使用 Rust 编程语言的枚举功能。
-      - 实现将树状数据使用 Unicode 艺术可视化的算法，会计算行宽并支持智能断行，集成到 SQL explain 中。
+      - 智能座舱模型部署。
       ],
     )
   }
 
   let mcREU = {
-    let reu-date = [#translate-date(5, 2019) -- #translate-date(8, 2019)]
+    let reu-date = [#translate-date(4, 2018) -- #translate-date(6, 2021)]
     let ghLink = githublink("owo-lang/voile-rs")
     translate(
       en: cventry(
@@ -210,23 +209,26 @@
       - Implemented (#ghLink) and formalized a row polymorphic dependent type theory.
       ],
       zh: cventry(
-        tl: [*跨校区本科科研活动*，州学院],
+        tl: [*阿里巴巴*，平头哥，上海],
         tr: reu-date,
-      )[- 广泛地调研关于行多态和结构体演算的研究，设计、实现（#ghLink）并形式化了一个相关的依值类型系统。],
+        bl: [推理框架，开发工程师],
+      )[- iot芯片语音唤醒引擎开发。
+        - 算子库开发。],
     )
   }
 
   let la461 = {
-    let la461-date = [#translate-date(8, 2022) -- #translate-date(12, 2022)]
+    let la461-date = [#translate-date(5, 2014) -- #translate-date(10, 2016)]
     translate(
       en: cventry(
         tl: [*Learning Assistant* for Cmpsc 461 (Programming Language Concepts), State College],
         tr: la461-date,
       )[],
       zh: cventry(
-        tl: [*Cmpsc 461 课程助教*（课程标题：编程语言概念），州学院],
+        tl: [*华为*，无线，上海],
         tr: la461-date,
-      )[],
+        bl: [C/C++，助理工程师],
+      )[- LTE基站上行调度器开发。],
     )
   }
 
@@ -333,7 +335,7 @@
     let mobileDev = {
       translate(
         en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 对*CUDA编程*有一定了解，熟悉C/C++和python。]
+        zh: [- 对*CUDA编程*有一定了解，有实际调试、优化经验。]
       )
     }
 
@@ -344,6 +346,13 @@
       )
     }
 
+    let language = {
+      translate(
+        en: [- Kotlin/Java: *10 years of experience*.],
+        zh: [- 熟悉C/C++和python。]
+      )
+    }
+
     progLang 
     kotlinJava
     compiler
@@ -351,6 +360,7 @@
     ideDev
     mobileDev
     devTools
+    language
   }
 
   let skills = {
@@ -471,8 +481,8 @@
   jetbrains
   plct
   risingwave
-  sbrella
-  pingcap
+  mcREU
+  la461
 
   translate(en: [== Related Projects], zh: [== 项目经历])
   aya
@@ -482,14 +492,14 @@
     #arendIO
   ]
 
-  noSimple[
-    #translate(en: [== Academic Experience], zh: [== 学术经历])
-    #mcREU
-    #la461
-  ]
+  // noSimple[
+  //   #translate(en: [== Academic Experience], zh: [== 学术经历])
+  //   #mcREU
+  //   #la461
+  // ]
 
-  translate(en: [== Skills], zh: [== 技能])
-  skills
+  // translate(en: [== Skills], zh: [== 技能])
+  // skills
 
 
   edu
