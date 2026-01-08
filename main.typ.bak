@@ -38,7 +38,7 @@
     )
     translate(en: [== Education], zh: [== 教育经历])
     let gpa = 3.28
-    let psu-date = [#translate-date(9, 2011) -- #translate-date(4, 2014)]
+    let psu-date = [#translate-date(8, 2018) -- #translate-date(12, 2022)]
     translate(
       en: cventry(
         tl: [B.S. in Computer Science at *The Pennsylvania State University*, PA, US],
@@ -47,16 +47,17 @@
         selected courses: #psu-courses.map(item => item.at(0)).join(", ")])[\
         Selected courses: #psu-courses.map(item => item.at(0) + " " + item.at(1)).join(", ")]],
       zh: cventry(
-        tl: [上海大学，机械电子工程，硕士],
+        tl: [宾夕法尼亚州州立大学，计算机科学专业，本科，美国],
         tr: psu-date,
-      )[],
+      )[副专业：数学, GPA #gpa/4.00\
+        部分选修课程：#psu-courses.map(item => item.at(0) + " " + item.at(2)).join(", ")],
     )
 
     let cmu-courses = (
       ([15-836], [Substructural Logics], [亚结构逻辑]),
       ([15-791], [Advanced Topics in Foundations of Types and Programming Languages], [类型和编程语言基础中的高级课题])
     )
-    let cmu-date = [#translate-date(9, 2007) -- #translate-date(6, 2011)]
+    let cmu-date = [#translate-date(8, 2023) -- #current]
     translate(
       en: cventry(
         tl: [Ph.D. in Computer Science at *Carnegie Mellon University*, PA, US],
@@ -65,9 +66,10 @@
         selected courses: #cmu-courses.map(item => item.at(0)).join(", ")])[\
         Selected courses: #cmu-courses.map(item => item.at(0) + " " + item.at(1)).join(", ")]],
       zh: cventry(
-        tl: [浙江科技大学，机械设计制造机器自动化，本科],
+        tl: [卡内基梅隆大学，计算机科学专业，博士，美国],
         tr: cmu-date,
-      )[],
+      )[导师：Stephanie Balzer\
+        部分选修课程：#cmu-courses.map(item => item.at(0) + " " + item.at(2)).join(", ")],
     )
   }
 
@@ -294,65 +296,6 @@
     )
   }
 
-    let summary = {
-    let progLang = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- *7年+AI芯片推理框架适配经验*，熟悉推理引擎关键技术，参与多款云/端 AI 芯片的 AI 推理框架适配与性能优化。]
-      )
-    }
-
-    let kotlinJava = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 熟悉*大模型推理框架*（vLLM/sglang），有实际开发经验。]
-      )
-    }
-
-    let compiler = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 熟悉端侧*传统神经网络模型推理框架*整体架构（ONNXRuntime/TFLite）。]
-      )
-    }
-
-    let typeTheory = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 熟悉*模型量化，稀疏，剪枝*等轻量化方法。]
-      )
-    }
-
-    let ideDev = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 理解*AI编译*流程，熟悉*MLIR*，具备相关开发经验。]
-      )
-    }
-
-    let mobileDev = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 对*CUDA编程*有一定了解，熟悉C/C++和python。]
-      )
-    }
-
-    let devTools = {
-      translate(
-        en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 对芯片算子精度分析有一定了解，熟悉*低精度*浮点数值表示，rounding mode等。]
-      )
-    }
-
-    progLang 
-    kotlinJava
-    compiler
-    typeTheory
-    ideDev
-    mobileDev
-    devTools
-  }
-
   let skills = {
     let devTools = {
       let tools = ("YouTrack", "Jira", "GitHub", "BitBucket", /* "Coding.net", "Tower", */ "Slack", "JetBrains Space")
@@ -439,33 +382,58 @@
     let cwPerc   = [0.020%]
     let cwRank   = [\#111]
     let projects = [*agda, Arend, libgdx, jacoco, KaTeX, shields.io, grpc-rs, intellij-solidity, intellij-haskell, intellij-rust, TeXiFy-IDEA, rust-analyzer*]
-    let GPTQModel = link("https://github.com/ModelCloud/GPTQModel")[GPTQModel]
-    let dlinfer = link("https://github.com/DeepLink-org/dlinfer")[dlinfer]
-    let lmdeploy = link("https://github.com/InternLM/lmdeploy")[lmdeploy]
 
+    translate(en: noSimple(simple: [
+      - Profile links (please use a PDF reader with hyperlink support):
+        #link(crates)[Crates.io],
+        #link(intellij)[IntelliJ] Marketplace
+    ])[
+      - Crates.io: #link(crates), publishing interesting Rust libraries
+      - IntelliJ Marketplace: #link(intellij)
+    ], zh: [
+      - 相关个人页面链接（请使用支持超链接的 PDF 阅读器）：#link(crates)[Crates.io] 主页，#link(intellij)[IntelliJ] 插件市场主页
+    ])
+    translate(
+      en: [- Languages: English - fluent (TOEFL 100), Chinese - native speaker],
+      zh: [- 语言：English - 熟练 (托福 100)，汉语 - 母语水平]
+    )
     translate(
       en: [
         - Open-source contributions: #osc, #noSimple[member of JuliaEditorSupport, agda, pest-parser, EmmyLua, arend-lang and more,]
           contributed to #projects and other projects #noSimple[(apart from organization ones)]
       ],
-      zh: [- 开源贡献: 向 #GPTQModel, #dlinfer, #lmdeploy 等项目贡献过代码]
+      zh: [- 开源贡献: #osc，向 #projects 等项目贡献过代码]
     )
-
+    [- #link("https://stackoverflow.com/users/7083401/ice1000")[StackOverflow]: #seRep
+      #translate(
+        en: [reputation, also active on #pase (#paRep reputation) and #stackex("other StackExchange sites")],
+        zh: [声誉，同时也在 #pase（#paRep 声誉）和#stackex("其他 StackExchange 子站")活跃]
+      )
+    ]
     translate(
-      en: [- Languages: English - fluent (TOEFL 100), Chinese - native speaker],
-      zh: [- 语言：English - 大学6级]
+      en: [
+        - Latest revision of this resume: one-page version #enSimple, complete version: #enElab
+        #noSimple[- Get the Chinese version of this resume: #cnLink]
+      ],
+      zh: [- 获取此简历的最新更新：中文版本 #cnLink，英语版本 #enElab，单页版本（仅英语）：#enSimple]
+    )
+    translate(
+      en: [
+        - #cwLevel on #codewars, ranked #cwRank on the whole site (Top #cwPerc),
+          #noSimple[solving and making new coding challenges] primarily in Haskell, Agda, and Idris
+          #noSimple[and some other JVM languages]
+      ],
+      zh: [- 在 #codewars 上，以 Haskell、Agda 和 Idris 为主，达到 #cwLevel，全站排名 #cwRank（前 #cwPerc）]
     )
   }
 
   // Start of the document
 
-  translate(en: [= #smallcaps[Tesla Zhang]], zh: [= 王宇驰])
+  translate(en: [= #smallcaps[Tesla Zhang]], zh: [= #smallcaps[Tesla Zhang] (千里冰封)])
 
-  [#link("mailto:yuchiwang@163.com")[yuchiwang\@gmail.com] $dot.c$ #iconlink("13917833446") $dot.c$ #iconlink("https://github.com/yuchiwang", icon: "github")]
+  [#link("mailto:ice1000kotlin@gmail.com")[ice1000kotlin\@gmail.com] $dot.c$ #iconlink("https://ice1000.org") $dot.c$ #iconlink("https://github.com/ice1000", icon: "github")]
 
-  translate(en: [== Personal Summary], zh: [== 个人概要])
-  summary
-
+  edu
 
   translate(en: [== Work Experience], zh: [== 工作经历])
   jetbrains
@@ -491,20 +459,17 @@
   translate(en: [== Skills], zh: [== 技能])
   skills
 
-
-  edu
-
   translate(en: [== Misc], zh: [== 其它])
   misc
 
-  // // https://github.com/typst/typst/issues/1462
-  // {
-  //   set text(size: 0pt)
-  //   [@SIT]
-  //   noSimple[@ExactlyApplied, @Guest, @ExtTyApp, @FordHelix]
-  // }
-  // translate(en: [== Publications & Preprints], zh: [== 论文发表 & 预印本])
-  // bibliography("pub.bib", title: none)
+  // https://github.com/typst/typst/issues/1462
+  {
+    set text(size: 0pt)
+    [@SIT]
+    noSimple[@ExactlyApplied, @Guest, @ExtTyApp, @FordHelix]
+  }
+  translate(en: [== Publications & Preprints], zh: [== 论文发表 & 预印本])
+  bibliography("pub.bib", title: none)
 }
 
 If you are seeing this in your compilation output,
