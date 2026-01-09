@@ -146,7 +146,6 @@
       - vLLM各版本适配。
       - sglang分布式推理系统架构设计和优化，从调度、访存、通信等各个层面分析和优化推理性能。
       - lmdeploy适配和性能优化。
-      - 量化。
       ],
     )
   }
@@ -242,11 +241,11 @@
       - Can export elaboration result to HTML or #latex. Can JIT-compile closures into JVM using HOAS, Can refine patterns using coverage information. Supports both LSP in VSCode and IntelliJ PSI. Provide jlink binary releases.
       ],
       zh: cventry(
-        tl: [*Aya Prover*，实用的依值类型系统实现（职位：项目组长）],
-        tr: githublink("aya-prover/aya-dev"),
+        tl: [*大模型推理框架沐曦GPU适配*],
+        tr: "",
       )[
-      - 支持依值类型、依值模式匹配及重叠情况一致性检查、高阶归纳类型、泛化代数数据类型（已发表文章）、分层宇宙、立方类型论特性和隐式参数的推导。
-      - 能导出繁饰结果到网页或 #latex。能将解释执行时的闭包 JIT 编译到 Java 字节码（使用 HOAS 接入原本的语法树）。能根据模式匹配覆盖情况智能对模式细化。同时支持 VSCode 的语言服务器协议和 IntelliJ 的代码分析框架。提供 jlink 二进制分发。
+      - 沐曦GPU上DeepSeek V3/R1 部署方案最佳实践：采用 PD 分离部署的方式。在框架侧，以sglang为基础，针对 DP、EP和TP并行策略做了相应适配，在模型侧，采用int8动态量化策略，在算子侧，采用MLA矩阵吸收、算子融合、通信和计算相互掩盖等技术以最大化利用硬件的算力、访存和通信带宽，使用投机推理MTP， 实现整个系统的最优性能。
+      - LMDeploy适配: 同上海人工智能实验室deeplink团队合作，使用dlinfer完成lmdeploy对沐曦GPU的适配，将框架与算子在适配工程中有效解耦，支持LLM和VLM推理。
       ],
     )
   }
@@ -258,9 +257,12 @@
         tr: githublink("ice1000/vscode-arend"),
       )[],
       zh: cventry(
-        tl: [*VSCode extension for Arend*，Arend 语言服务实现，基于 lsp4j 框架和 Arend 编译器内部接口。],
-        tr: githublink("ice1000/vscode-arend"),
-      )[],
+        tl: [*理想汽车自研推理芯片工具链开发*],
+        tr: "",
+      )[
+      - 负责基于MLIR的AI编译器前端IR设计，支持ONNX等模型导入；算子融合等图优化pass编写。
+      - 负责GEMM、SFU等算子精度分析，基于pytorch构建算子精度验证框架，精度差异定位，评估不同量化策略和浮点低精度数值表示（fp8/fp24）在智驾模型上的精度表现。
+      ],
     )
   }
 
@@ -271,8 +273,8 @@
         tr: githublink("ice1000/arend-io"),
       )[],
       zh: cventry(
-        tl: [*Arend IO*，实验性 Arend IO 库，实现了 unsafePerformIO 和简单的 IO 操作。],
-        tr: githublink("ice1000/arend-io"),
+        tl: [*百度智能座舱*，将百度语音语义模型通过Paddle Lite推理引擎部署至高通SA8295P座舱芯片。],
+        tr: "",
       )[],
     )
   }
@@ -287,11 +289,13 @@
       - Provides live preview -- test grammar files by dynamically highlighting user code according to the grammar on the fly. These highlighted code could be exported to HTML.
       ],
       zh: cventry(
-        tl: [*IntelliJ Pest*，给 IntelliJ Platform 开发的 Pest 文法语言插件],
-        tr: githublink("pest-parser/intellij-pest"),
+        tl: [*嵌入式场景推理唤醒引擎开发*],
+        tr: ""
       )[
-      - 支持含语义信息的高亮、错误检查、定义跳转、变量补全、提取定义、内联定义以及与 Rust 插件集成。
-      - 提供实时高亮功能——可根据语法定义为用户代码动态提供高亮以测试语法定义文件，并支持导出 HTML。
+      对天猫精灵智能音箱产品，开发面向MCU级芯片的超轻量级语音唤醒引擎，参考caffe和tflite，采用纯C编写，使用simd汇编对算子进行加速，模型采用8比特量化。
+      - 内存规划器开发，通过张量生命周期分析与内存复用，最小化模型推理时的峰值内存占用。
+      - SIMD算子库编写：神经网络算子和数学库。
+
       ],
     )
   }
@@ -314,7 +318,7 @@
     let compiler = {
       translate(
         en: [- Kotlin/Java: *10 years of experience*.],
-        zh: [- 熟悉端侧*传统神经网络模型推理框架*整体架构（ONNXRuntime/TFLite）。]
+        zh: [- 熟悉*小模型推理框架*整体架构（ONNXRuntime/TFLite）。]
       )
     }
 
@@ -471,7 +475,7 @@
 
   translate(en: [= #smallcaps[Tesla Zhang]], zh: [= 王宇驰])
 
-  [#link("mailto:yuchiwang@163.com")[yuchiwang\@gmail.com] $dot.c$ #iconlink("13917833446") $dot.c$ #iconlink("https://github.com/yuchiwang", icon: "github")]
+  [#link("mailto:yuchiwang@163.com")[yuchiwang\@163.com] $dot.c$ #iconlink("13917833446") $dot.c$ #iconlink("https://github.com/yuchiwang", icon: "github")]
 
   translate(en: [== Personal Summary], zh: [== 个人概要])
   summary
@@ -486,11 +490,11 @@
 
   translate(en: [== Related Projects], zh: [== 项目经历])
   aya
-  intellijPest
   noSimple[
     #arendVSCode
     #arendIO
   ]
+  intellijPest
 
   // noSimple[
   //   #translate(en: [== Academic Experience], zh: [== 学术经历])
