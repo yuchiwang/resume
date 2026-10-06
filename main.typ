@@ -24,61 +24,17 @@
     cventry(
       tl: [*沐曦集成电路*，PDE，上海],
       tr: [#translate-date(8, 2024) -- #translate-date(11, 2025)],
-      bl: [大模型推理，软件专家],
+      bl: [软件专家，推理框架适配],
     )[
-      - 负责 vLLM 多版本适配。
-      - 参与 SGLang 分布式推理系统架构设计与性能优化，从调度、访存、通信等层面分析并优化推理性能。
-      - 负责 LMDeploy 在沐曦 GPU 上的适配与性能优化。
+      - 负责 vLLM 多版本适配；基于 SGLang 完成 DeepSeek V3/R1 在沐曦 GPU 上的部署方案实践，采用 PD 分离部署并适配 DP、EP、TP 并行策略。
+      - 在模型侧采用 int8 动态量化；算子侧采用 MLA 矩阵吸收、算子融合、通信与计算掩盖等技术，提升硬件算力、访存与通信带宽利用率；结合投机推理 MTP 优化系统整体性能。
+      - 与上海人工智能实验室 DeepLink 团队合作，使用 dlinfer 完成 LMDeploy 对沐曦 GPU 的适配，将框架与算子适配解耦，支持 LLM 和 VLM 推理。
     ]
 
     cventry(
       tl: [*理想汽车*，算力单元，上海],
       tr: [#translate-date(9, 2022) -- #translate-date(5, 2024)],
-      bl: [AI 编译器，高级开发工程师],
-    )[
-      - 负责 AI 编译器前端表示与图优化。
-      - 开发算子精度验证框架，支持芯片算子精度分析与问题定位。
-    ]
-
-    cventry(
-      tl: [*百度*，IDG，上海],
-      tr: [#translate-date(7, 2021) -- #translate-date(8, 2022)],
-      bl: [模型部署，高级研发工程师],
-    )[
-      - 负责智能座舱模型部署，将百度语音语义模型通过 Paddle Lite 推理引擎部署至高通 SA8295P 座舱芯片。
-    ]
-
-    cventry(
-      tl: [*阿里巴巴*，平头哥，上海],
-      tr: [#translate-date(4, 2018) -- #translate-date(6, 2021)],
-      bl: [推理框架，开发工程师],
-    )[
-      - 负责 IoT 芯片语音唤醒引擎开发。
-      - 负责神经网络算子库开发。
-    ]
-
-    cventry(
-      tl: [*华为*，无线，上海],
-      tr: [#translate-date(5, 2014) -- #translate-date(10, 2016)],
-      bl: [C/C++，助理工程师],
-    )[
-      - 负责 LTE 基站上行调度器开发。
-    ]
-  }
-
-  let projects = {
-    cventry(
-      tl: [*大模型推理框架沐曦 GPU 适配*],
-      tr: [],
-    )[
-      - 在沐曦 GPU 上完成 DeepSeek V3/R1 部署方案实践，采用 PD 分离部署；框架侧基于 SGLang 适配 DP、EP、TP 并行策略，模型侧采用 int8 动态量化。
-      - 算子侧采用 MLA 矩阵吸收、算子融合、通信与计算掩盖等技术，提升硬件算力、访存与通信带宽利用率；结合投机推理 MTP 优化系统整体性能。
-      - 与上海人工智能实验室 DeepLink 团队合作，使用 dlinfer 完成 LMDeploy 对沐曦 GPU 的适配，将框架与算子适配解耦，支持 LLM 和 VLM 推理。
-    ]
-
-    cventry(
-      tl: [*理想汽车自研推理芯片工具链开发*],
-      tr: [],
+      bl: [高级开发工程师，AI 编译器],
     )[
       - 负责基于 MLIR 的 AI 编译器前端 IR 设计，支持 ONNX 等模型导入；编写算子融合等图优化 pass。
       - 负责 GEMM、SFU 等算子精度分析，基于 PyTorch 构建算子精度验证框架，定位精度差异。
@@ -86,12 +42,29 @@
     ]
 
     cventry(
-      tl: [*嵌入式场景推理唤醒引擎开发*],
-      tr: [],
+      tl: [*百度*，IDG，上海],
+      tr: [#translate-date(7, 2021) -- #translate-date(8, 2022)],
+      bl: [高级研发工程师，模型部署],
+    )[
+      - 负责智能座舱模型部署，将百度语音语义模型通过 Paddle Lite 推理引擎部署至高通 SA8295P 座舱芯片。
+    ]
+
+    cventry(
+      tl: [*阿里巴巴*，平头哥，上海],
+      tr: [#translate-date(4, 2018) -- #translate-date(6, 2021)],
+      bl: [开发工程师，推理框架],
     )[
       - 面向天猫精灵智能音箱，开发 MCU 级芯片上的超轻量级语音唤醒引擎；参考 Caffe 和 TFLite，采用纯 C 编写，使用 SIMD 汇编加速算子，模型采用 8 比特量化。
       - 开发内存规划器，通过张量生命周期分析与内存复用，降低模型推理峰值内存占用。
       - 编写 SIMD 神经网络算子库和数学库。
+    ]
+
+    cventry(
+      tl: [*华为*，无线，上海],
+      tr: [#translate-date(5, 2014) -- #translate-date(10, 2016)],
+      bl: [助理工程师，C/C++],
+    )[
+      - 负责 LTE 基站上行调度器开发。
     ]
   }
 
@@ -127,9 +100,6 @@
 
   == 工作经历
   #work-experience
-
-  == 项目经历
-  #projects
 
   == 教育经历
   #education
